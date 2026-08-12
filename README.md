@@ -49,7 +49,7 @@ Two values are currently hardcoded and need to be edited to match your machine:
 | Value | Location |
 | --- | --- |
 | Interface name (`ens33`) | [internals/interface.go](internals/interface.go), [cmd/main.go](cmd/main.go) |
-| Target subnet (`192.168.225.25/24`) | [cmd/main.go](cmd/main.go) |
+| Target subnet (`192.168.1.25/24`) | [cmd/main.go](cmd/main.go) |
 
 Find your interface name with `ip addr`.
 
