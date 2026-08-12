@@ -17,7 +17,7 @@ func SourceIP_MAC(ClienfINF *NetworkInterface) *NetworkInterface {
 	for _, IFC := range INFC {
 		ipAddr, _ := IFC.Addrs()
 
-		if IFC.Name == "ens33" {
+		if IFC.Name == "ens33" { // change this to your network interface name
 			for _, clientIP := range ipAddr {
 				isV4 := clientIP.(*net.IPNet).IP.To4()
 				if isV4 != nil {

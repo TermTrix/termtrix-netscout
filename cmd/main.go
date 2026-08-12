@@ -44,7 +44,7 @@ func main() {
 	clientINF := internals.NetworkInterface{}
 	INFC := internals.SourceIP_MAC(&clientINF)
 
-	_, network, _ := net.ParseCIDR("192.168.225.25/24")
+	_, network, _ := net.ParseCIDR("192.168.1.22/24") // change this to your network range
 
 	targets := hosts(network)
 
@@ -53,8 +53,6 @@ func main() {
 		SourceMAC: INFC.SourceMAC,
 		EtherType: 0x0806,
 	}
-
-	// TargetIP := net.ParseIP("192.168.225.18")
 
 	var TagetMac = net.HardwareAddr{
 		0x00,
@@ -118,9 +116,9 @@ func main() {
 				buf[31],
 			)
 
-			senderMAC := FormatMAC(buf[22:28])
+			// senderMAC := FormatMAC(buf[22:28])
 
-			fmt.Println(senderIP, "-->", senderMAC)
+			fmt.Println(senderIP, "-->", net.HardwareAddr(buf[22:28]))
 		}
 	}()
 
